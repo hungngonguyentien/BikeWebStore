@@ -1,15 +1,29 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const AddressContact = () => {
   return (
-    <div>
-      <div style={{ 
-        textAlign: 'center', 
-        padding: '60px 20px 40px', 
-        width: '100%' 
-      }}>
-        <h1 className="gradient-text">Địa Chỉ & Liên Hệ</h1>
-      </div>
+    <>
+      <Helmet>
+        <title>Địa Chỉ & Liên Hệ - PHÚ DŨNG | Cửa Hàng Xe Máy Đắk Lắk</title>
+        <meta name="description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk. Địa chỉ: Số 32 - Cách Mạng Tháng 8, Thị trấn Quảng Phú, Huyện Cư M'gar, Đắk Lắk. Hotline: 090.350.3600" />
+        <meta name="keywords" content="liên hệ PHÚ DŨNG, địa chỉ cửa hàng xe máy, Đắk Lắk, Cư M'gar, Quảng Phú, 090.350.3600, xe máy Đắk Lắk" />
+        <meta property="og:title" content="Địa Chỉ & Liên Hệ - PHÚ DŨNG" />
+        <meta property="og:description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk" />
+        <meta property="og:type" content="place" />
+        <meta name="geo.region" content="VN-72" />
+        <meta name="geo.placename" content="Đắk Lắk" />
+        <meta name="geo.position" content="12.6667;108.0333" />
+        <link rel="canonical" href="/lienlac" />
+      </Helmet>
+      <div>
+        <div style={{ 
+          textAlign: 'center', 
+          padding: '60px 20px 40px', 
+          width: '100%' 
+        }}>
+          <h1 className="gradient-text">Địa Chỉ & Liên Hệ</h1>
+        </div>
       
       <div className="container section-spacing">
         <div style={{ 
@@ -18,7 +32,6 @@ const AddressContact = () => {
           gap: '40px'
         }}>
         <div style={{
-          background: 'white',
           padding: '30px',
           borderRadius: '20px',
           boxShadow: '0 8px 30px rgba(38, 70, 83, 0.1)',
@@ -39,7 +52,6 @@ const AddressContact = () => {
         </div>
 
         <div style={{
-          background: 'white',
           padding: '30px',
           borderRadius: '20px',
           boxShadow: '0 8px 30px rgba(38, 70, 83, 0.1)',
@@ -75,7 +87,8 @@ const AddressContact = () => {
           Chuyên cung cấp xe máy chính hãng - Dịch vụ tận tâm - Giá cả hợp lý
         </p>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

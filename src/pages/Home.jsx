@@ -3,6 +3,7 @@ import BikeDisplay from '../components/BikeDisplay'
 import BikeByCompany from '../components/BikeByCompany'
 import { useState, useEffect } from 'react'
 import { fetchBikesFromSheets } from '../utils/googleSheets'
+import { Helmet } from 'react-helmet-async'
 
 // Sample bike data - replace this with your Google Sheets fetch
 const sampleBikes = [
@@ -74,6 +75,20 @@ function Home(){
 
     return (
         <>
+            <Helmet>
+                <title>PHÚ DŨNG - Xe Máy Chất Lượng | Cửa Hàng Xe Máy Đắk Lắk</title>
+                <meta name="description" content="PHÚ DŨNG chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu như Honda, Yamaha, Suzuki. Địa chỉ: Số 32 - Cách Mạng Tháng 8, Quảng Phú, Cư M'gar, Đắk Lắk. Liên hệ: 090.350.3600" />
+                <meta name="keywords" content="xe máy, Honda, Yamaha, Suzuki, VinFast, Đắk Lắk, Cư M'gar, Quảng Phú, PHÚ DŨNG, xe máy chất lượng" />
+                <meta name="author" content="PHÚ DŨNG" />
+                <meta property="og:title" content="PHÚ DŨNG - Xe Máy Chất Lượng" />
+                <meta property="og:description" content="Chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu. Dịch vụ tận tâm - Giá cả hợp lý." />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="vi_VN" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="PHÚ DŨNG - Xe Máy Chất Lượng" />
+                <meta name="twitter:description" content="Chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu" />
+                <link rel="canonical" href="/" />
+            </Helmet>
             <main style={{ padding: 0 }}>
                 <div style={{ padding: '0 20px' }}>
                     <ImageSlider />

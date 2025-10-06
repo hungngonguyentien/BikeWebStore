@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ProductMenu from '../components/ProductMenu'
 import ProductCard from '../components/ProductCard'
 import { fetchBikesFromSheets } from '../utils/googleSheets'
+import { Helmet } from 'react-helmet-async'
 import './Products.css'
 
 const Products = () => {
@@ -42,13 +43,23 @@ const Products = () => {
     : bikes.filter(bike => bike.manufacturer === selectedManufacturer)
 
   return (
-    <div className="products-page">
-      <div className="products-header-section">
-        <h1 className="text-center gradient-text">Sản Phẩm</h1>
-        <p className="text-center products-subtitle">
-          Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu
-        </p>
-      </div>
+    <>
+      <Helmet>
+        <title>Sản Phẩm - PHÚ DŨNG | Xe Máy Honda, Yamaha, Suzuki, VinFast</title>
+        <meta name="description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu Honda, Yamaha, Suzuki, VinFast tại PHÚ DŨNG. Giá cả cạnh tranh, chất lượng đảm bảo." />
+        <meta name="keywords" content="sản phẩm xe máy, Honda Winner, Yamaha Exciter, Suzuki Raider, VinFast, xe máy mới, xe máy chính hãng, Đắk Lắk" />
+        <meta property="og:title" content="Sản Phẩm Xe Máy - PHÚ DŨNG" />
+        <meta property="og:description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="/products" />
+      </Helmet>
+      <div className="products-page">
+        <div className="products-header-section">
+          <h1 className="text-center gradient-text">Sản Phẩm</h1>
+          <p className="text-center products-subtitle">
+            Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu
+          </p>
+        </div>
       
       <div className="container section-spacing">
         <div className="products-layout">
@@ -66,7 +77,8 @@ const Products = () => {
           />
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 
