@@ -1,0 +1,108 @@
+.slider {
+  --mobile-max: 360px;
+  --desktop-max: 1000px;
+  position: relative;
+  max-width: var(--desktop-max);
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(38, 70, 83, 0.15);
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #2A9D8F, #E9C46A, #F4A261) border-box;
+}
+
+.slider__viewport {
+  position: relative;
+  /* maintain aspect ratio: 16:9 on desktop, scale down on mobile */
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.slider__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #264653, #2A9D8F);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(38, 70, 83, 0.3);
+}
+
+.slider__btn:hover {
+  background: linear-gradient(135deg, #2A9D8F, #E9C46A);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(42, 157, 143, 0.4);
+}
+
+.slider__btn--prev { left: 12px }
+.slider__btn--next { right: 12px }
+
+.slider__dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.slider__dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider__dot:hover {
+  background: #E9C46A;
+  transform: scale(1.2);
+}
+
+.slider__dot.is-active { 
+  background: #F4A261;
+  border-color: #E76F51;
+  transform: scale(1.3);
+}
+
+/* Mobile: keep the slider compact */
+@media (max-width: 420px) {
+  .slider {
+    max-width: var(--mobile-max);
+  }
+
+  .slider__viewport {
+    aspect-ratio: 16 / 9;
+  }
+
+  .slider__btn {
+    padding: 6px 8px;
+  }
+}
+
+/* Desktop: allow larger max-width */
+@media (min-width: 900px) {
+  .slider {
+    max-width: var(--desktop-max);
+  }
+}

@@ -1,0 +1,126 @@
+.bike-by-company {
+  margin: 60px 0;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #E0FBFC 0%, white 100%);
+  border-radius: 20px;
+  padding: 30px 20px;
+  margin: 40px 20px;
+}
+
+.bike-by-company__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 4px solid transparent;
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(90deg, #2A9D8F, #E9C46A, #F4A261) border-box;
+  border-image: linear-gradient(90deg, #2A9D8F, #E9C46A, #F4A261) 1;
+}
+
+.bike-by-company__title {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #264653, #2A9D8F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bike-by-company__controls {
+  display: flex;
+  gap: 8px;
+}
+
+.bike-by-company__btn {
+  background: linear-gradient(135deg, #2A9D8F, #E9C46A);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+}
+
+.bike-by-company__btn:hover {
+  background: linear-gradient(135deg, #E9C46A, #F4A261);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(233, 196, 106, 0.4);
+}
+
+.bike-by-company__btn:active {
+  transform: translateY(0);
+}
+
+.bike-by-company__slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0 20px 0;
+  
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.bike-by-company__slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.bike-by-company__slide {
+  flex: 0 0 auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bike-by-company {
+    padding: 0 10px;
+    margin: 30px 0;
+  }
+  
+  .bike-by-company__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .bike-by-company__title {
+    font-size: 22px;
+  }
+  
+  .bike-by-company__controls {
+    align-self: flex-end;
+  }
+  
+  .bike-by-company__btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .bike-by-company__slider {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bike-by-company__title {
+    font-size: 20px;
+  }
+  
+  .bike-by-company__slider {
+    gap: 12px;
+  }
+}

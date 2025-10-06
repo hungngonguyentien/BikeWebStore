@@ -1,0 +1,144 @@
+/* Global App Styles with Professional Color Palette */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #E0FBFC 0%, white 50%, #E0FBFC 100%);
+  color: #264653;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { 
+  font-size: 2.5rem; 
+  background: linear-gradient(135deg, #264653, #2A9D8F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 { 
+  font-size: 2rem;
+  color: #264653;
+}
+
+h3 { 
+  font-size: 1.5rem;
+  color: #2A9D8F;
+}
+
+/* Links */
+a {
+  color: #2A9D8F;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #E76F51;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2A9D8F, #E9C46A);
+  color: white;
+  box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #E9C46A, #F4A261);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 196, 106, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: #264653;
+  border: 2px solid #E0FBFC;
+}
+
+.btn-secondary:hover {
+  background: #E0FBFC;
+  border-color: #2A9D8F;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-spacing {
+  margin: 60px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #264653, #2A9D8F, #E9C46A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .section-spacing {
+    margin: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

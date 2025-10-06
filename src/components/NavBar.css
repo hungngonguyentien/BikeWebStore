@@ -1,0 +1,152 @@
+.nav {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  background: white;
+  color: #264653;
+  box-shadow: 0 2px 10px rgba(38, 70, 83, 0.1);
+  border-bottom: 2px solid #E0FBFC;
+}
+
+.nav__left,
+.nav__middle,
+.nav__right {
+  padding: 8px 12px;
+}
+
+.nav__left {
+  width: 20%;
+  text-align: left;
+}
+
+.nav__middle {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav__link {
+  color: inherit;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 150ms ease, transform 120ms ease;
+  display: inline-block;
+}
+
+.nav__link:hover {
+  background-color: #2A9D8F;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(42, 157, 143, 0.3);
+}
+
+.nav__right {
+  width: 20%;
+  text-align: right;
+}
+
+.nav__brand {
+  color: #264653;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 22px;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.nav__brand:hover {
+  color: #2A9D8F;
+}
+
+.nav__phone {
+  background: linear-gradient(135deg, #E76F51, #F4A261);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(231, 111, 81, 0.3);
+  transition: all 0.2s ease;
+}
+
+.nav__phone:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(231, 111, 81, 0.4);
+}
+
+/* hide mobile controls by default on desktop */
+.nav__toggle,
+.nav__mobileMenu {
+  display: none;
+}
+
+/* Small screen fallback: stack vertically */
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: row;
+    height: 56px;
+    gap: 0;
+    padding: 8px 12px;
+    align-items: center;
+  }
+
+  /* hide desktop sections on small screens, toggle will show menu */
+  .nav__middle,
+  .nav__right {
+    display: none;
+  }
+
+  .nav__left {
+    width: auto;
+    flex: 1;
+  }
+
+  /* show toggle */
+  .nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 20px;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+
+  .nav__mobileMenu {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 2px solid #E0FBFC;
+    box-shadow: 0 8px 20px rgba(38, 70, 83, 0.15);
+    padding: 16px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 50;
+  }
+
+  .nav__mobileMenu.is-open {
+    display: flex;
+  }
+
+  .nav__mobileMenu .nav__link {
+    display: block;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+
+  .nav__mobilePhone {
+    margin-top: 8px;
+    text-align: left;
+  }
+}
