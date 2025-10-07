@@ -5,6 +5,31 @@ import { fetchBikesFromSheets } from '../utils/googleSheets'
 import { Helmet } from 'react-helmet-async'
 import './Products.css'
 
+// Fallback sample bikes (copied from Home.jsx) used if Google Sheets fetch fails
+const sampleBikes = [
+    {
+      id: 1,
+      name: 'Honda Winner X',
+      price: '45,990,000 VND',
+      imageURL: 'https://via.placeholder.com/300x200/264653/E0FBFC?text=Honda+Winner+X',
+      manufacturer: 'Honda'
+    },
+    {
+      id: 2,
+      name: 'Yamaha Exciter 155',
+      price: '47,390,000 VND',
+      imageURL: 'https://via.placeholder.com/300x200/E76F51/E0FBFC?text=Yamaha+Exciter',
+      manufacturer: 'Yamaha'
+    },
+    {
+      id: 3,
+      name: 'Suzuki Raider R150',
+      price: '52,900,000 VND',
+      imageURL: 'https://via.placeholder.com/300x200/2A9D8F/E0FBFC?text=Suzuki+Raider',
+      manufacturer: 'Suzuki'
+    }
+]
+
 const Products = () => {
   const [bikes, setBikes] = useState([])
   const [selectedManufacturer, setSelectedManufacturer] = useState('Tất cả')

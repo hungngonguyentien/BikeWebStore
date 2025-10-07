@@ -11,8 +11,8 @@ const BikeDisplay = ({ bike }) => {
           src={imageURL} 
           alt={name}
           className="bike-display__image"
-          onError={(e) => {
-            console.log(bike);
+          onError={() => {
+            console.log(bike)
           }}
         />
       </div>

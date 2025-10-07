@@ -89,7 +89,7 @@ export const parseCSVToBikes = (csvText) => {
 
   const rawHeaders = rows[0].map(h => (h || '').toLowerCase().trim())
 
-  const normalize = s => (s || '').toLowerCase().replace(/[\s_\.]/g, '')
+  const normalize = s => (s || '').toLowerCase().replace(/[\s_.]/g, '')
 
   const findIndex = (candidates) => {
     for (const cand of candidates) {
