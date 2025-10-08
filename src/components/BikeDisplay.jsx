@@ -9,8 +9,10 @@ const BikeDisplay = ({ bike }) => {
       <div className="bike-display__image-wrapper">
         <img 
           src={imageURL} 
-          alt={name}
+          alt={`${name} - ${manufacturer} giá ${price}`}
           className="bike-display__image"
+          loading="lazy"
+          decoding="async"
           onError={() => {
             console.log(bike)
           }}

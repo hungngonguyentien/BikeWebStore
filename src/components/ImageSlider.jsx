@@ -27,9 +27,17 @@ const ImageSlider = ({ interval = 3000 }) => {
           <img
             key={i}
             src={src}
-            alt={`slide-${i}`}
+            alt={
+              i === 0
+                ? 'Sự kiện cửa hàng xe máy & xe điện Phú Dũng – dịch vụ và ưu đãi'
+                : i === 1
+                ? 'Khách hàng tại Phú Dũng lựa chọn xe phù hợp nhu cầu'
+                : 'Mẫu xe nổi bật trưng bày tại Phú Dũng'
+            }
             className={`slider__img ${i === index ? 'is-active' : ''}`}
             style={{ transform: `translateX(${(i - index) * 100}%)` }}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
           />
         ))}
       </div>
