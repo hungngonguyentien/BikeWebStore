@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block build artifacts or sensitive paths if added later
+# Disallow: /admin/
+# Disallow: /api/
+
+Sitemap: https://vinfastphudung.vn/sitemap.xml

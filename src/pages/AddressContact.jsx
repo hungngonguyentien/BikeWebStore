@@ -11,10 +11,19 @@ const AddressContact = () => {
         <meta property="og:title" content="Địa Chỉ & Liên Hệ - PHÚ DŨNG" />
         <meta property="og:description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk" />
         <meta property="og:type" content="place" />
+        <meta property="og:url" content="https://vinfastphudung.vn/lienlac" />
+        <meta property="og:site_name" content="PHÚ DŨNG Xe Máy" />
         <meta name="geo.region" content="VN-72" />
         <meta name="geo.placename" content="Đắk Lắk" />
         <meta name="geo.position" content="12.6667;108.0333" />
-        <link rel="canonical" href="/lienlac" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Địa Chỉ & Liên Hệ - PHÚ DŨNG" />
+        <meta name="twitter:description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk" />
+        <meta name="twitter:url" content="https://vinfastphudung.vn/lienlac" />
+        <meta property="og:image" content="https://vinfastphudung.vn/og-image.png" />
+        <meta property="og:image:alt" content="PHÚ DŨNG - Cửa Hàng Xe Máy & Xe Điện" />
+        <meta name="twitter:image" content="https://vinfastphudung.vn/og-image.png" />
+        <link rel="canonical" href="https://vinfastphudung.vn/lienlac" />
       </Helmet>
       <div>
         <div style={{ 

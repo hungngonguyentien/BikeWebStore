@@ -84,10 +84,16 @@ function Home(){
                 <meta property="og:description" content="Chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu. Dịch vụ tận tâm - Giá cả hợp lý." />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="vi_VN" />
+                <meta property="og:url" content="https://vinfastphudung.vn/" />
+                <meta property="og:site_name" content="PHÚ DŨNG Xe Máy" />
+                <meta property="og:image" content="https://vinfastphudung.vn/og-image.png" />
+                <meta property="og:image:alt" content="PHÚ DŨNG - Cửa Hàng Xe Máy & Xe Điện" />
+                <meta name="twitter:image" content="https://vinfastphudung.vn/og-image.png" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="PHÚ DŨNG - Xe Máy Chất Lượng" />
                 <meta name="twitter:description" content="Chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu" />
-                <link rel="canonical" href="/" />
+                <meta name="twitter:url" content="https://vinfastphudung.vn/" />
+                <link rel="canonical" href="https://vinfastphudung.vn/" />
             </Helmet>
             <main style={{ padding: 0 }}>
                 <div style={{ padding: '0 20px' }}>

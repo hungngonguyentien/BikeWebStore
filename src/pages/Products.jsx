@@ -76,7 +76,16 @@ const Products = () => {
         <meta property="og:title" content="Sản Phẩm Xe Máy - PHÚ DŨNG" />
         <meta property="og:description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="/products" />
+        <meta property="og:url" content="https://vinfastphudung.vn/products" />
+        <meta property="og:site_name" content="PHÚ DŨNG Xe Máy" />
+  <meta property="og:image" content="https://vinfastphudung.vn/og-image.png" />
+  <meta property="og:image:alt" content="PHÚ DŨNG - Cửa Hàng Xe Máy & Xe Điện" />
+  <meta name="twitter:image" content="https://vinfastphudung.vn/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sản Phẩm Xe Máy - PHÚ DŨNG" />
+        <meta name="twitter:description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu" />
+        <meta name="twitter:url" content="https://vinfastphudung.vn/products" />
+        <link rel="canonical" href="https://vinfastphudung.vn/products" />
       </Helmet>
       <div className="products-page">
         <div className="products-header-section">
