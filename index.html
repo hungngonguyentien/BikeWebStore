@@ -70,7 +70,13 @@
         "currenciesAccepted": "VND",
         "paymentAccepted": "Cash, Card, BankTransfer, E-Wallet",
         "openingHoursSpecification": [
-          {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens": "07:00","closes": "17:30"}
+          {"@type": "OpeningHoursSpecification","dayOfWeek": "Monday","opens": "07:00","closes": "17:30"},
+          {"@type": "OpeningHoursSpecification","dayOfWeek": "Tuesday","opens": "07:00","closes": "17:30"},
+          {"@type": "OpeningHoursSpecification","dayOfWeek": "Wednesday","opens": "07:00","closes": "17:30"},
+          {"@type": "OpeningHoursSpecification","dayOfWeek": "Thursday","opens": "07:00","closes": "17:30"},
+          {"@type": "OpeningHoursSpecification","dayOfWeek": "Friday","opens": "07:00","closes": "17:30"},
+          {"@type": "OpeningHoursSpecification","dayOfWeek": "Saturday","opens": "07:00","closes": "17:30"},
+          {"@type": "OpeningHoursSpecification","dayOfWeek": "Sunday","opens": "07:00","closes": "17:30"}
         ],
         "makesOffer": [
           {"@type": "Offer", "name": "Sửa chữa & Bảo dưỡng", "category": "Service"},
@@ -86,9 +92,21 @@
         "sameAs": ["https://www.facebook.com/p/Xe-máy-điện-VinFast-PHÚ-DŨNG-100057568774434/"]
       },
       {"@type": "WebSite","@id": "https://vinfastphudung.vn/#website","url": "https://vinfastphudung.vn/","name": "Vinfast Phú Dũng","inLanguage": "vi-VN"},
+      {"@type": "BreadcrumbList","@id": "https://vinfastphudung.vn/#breadcrumbs","itemListElement": [
+        {"@type": "ListItem","position": 1,"name": "Trang Chủ","item": "https://vinfastphudung.vn/"},
+        {"@type": "ListItem","position": 2,"name": "Sản Phẩm","item": "https://vinfastphudung.vn/products"},
+        {"@type": "ListItem","position": 3,"name": "Liên Lạc","item": "https://vinfastphudung.vn/lienlac"}
+      ]},
   {"@type": "Product","@id": "https://vinfastphudung.vn/#product-klara-s","name": "Klara S (2022)","brand": {"@type": "Brand", "name": "VinFast"},"image": "https://res.cloudinary.com/dnfpec5yg/image/upload/v1759943421/VinFast-4-1_of6r0l.jpg","description": "Xe điện Klara S 2022 phong cách, ~3000W, tầm hoạt động ~194 km điều kiện thuận lợi.","offers": {"@type": "Offer","priceCurrency": "VND","price": "35000000","availability": "https://schema.org/InStock"},"additionalProperty": [{"@type": "PropertyValue","name": "powerType","value": "Electric"},{"@type": "PropertyValue","name": "rangeOptimisticKm","value": "194"},{"@type": "PropertyValue","name": "batteryWarranty","value": "1-2 năm tùy xe"}]},
   {"@type": "Product","@id": "https://vinfastphudung.vn/#product-feliz-s","name": "Feliz S","brand": {"@type": "Brand", "name": "VinFast"},"image": "https://res.cloudinary.com/dnfpec5yg/image/upload/v1759718594/img-top-feliz-lite-black_vpq3kv.webp","description": "Feliz S cân bằng chi phí và tầm hoạt động, lựa chọn phổ biến, tính năng tốt.","offers": {"@type": "Offer","priceCurrency": "VND","price": "27000000","availability": "https://schema.org/InStock"},"additionalProperty": [{"@type": "PropertyValue","name": "powerType","value": "Electric"},{"@type": "PropertyValue","name": "batteryWarranty","value": "1-2 năm tùy xe"}]},
   {"@type": "Product","@id": "https://vinfastphudung.vn/#product-vento-s","name": "Vento S","brand": {"@type": "Brand", "name": "VinFast"},"image": "https://res.cloudinary.com/dnfpec5yg/image/upload/v1759943390/Xe-Vinfast-Vento-s_frhju3.webp","description": "Vento S cao cấp, hiệu năng mạnh, tốc độ & tính năng vượt trội cho nhu cầu cao.","offers": {"@type": "Offer","priceCurrency": "VND","price": "50000000","availability": "https://schema.org/InStock"},"additionalProperty": [{"@type": "PropertyValue","name": "powerType","value": "Electric"},{"@type": "PropertyValue","name": "batteryWarranty","value": "1-2 năm tùy xe"}]}
+  ,{"@type": "FAQPage","@id": "https://vinfastphudung.vn/faq#faq","mainEntity": [
+    {"@type": "Question","name": "Thời gian bảo hành pin xe điện VinFast là bao lâu?","acceptedAnswer": {"@type": "Answer","text": "Pin xe điện VinFast thường được bảo hành 1–2 năm (tùy mẫu xe và chính sách từng thời điểm). Vui lòng liên hệ trực tiếp để biết chi tiết hiện hành."}},
+    {"@type": "Question","name": "Cửa hàng có hỗ trợ mua xe trả góp không?","acceptedAnswer": {"@type": "Answer","text": "Có. Chúng tôi hỗ trợ trả góp linh hoạt sau khi thẩm định giấy tờ. Đem theo CMND/CCCD và một số giấy tờ bổ sung nếu cần."}},
+    {"@type": "Question","name": "Thời gian mở cửa hằng ngày?","acceptedAnswer": {"@type": "Answer","text": "Cửa hàng mở cửa 07:00–17:30 tất cả các ngày trong tuần."}},
+    {"@type": "Question","name": "Có hỗ trợ thay pin và bảo dưỡng định kỳ?","acceptedAnswer": {"@type": "Answer","text": "Chúng tôi cung cấp dịch vụ thay pin, kiểm tra và bảo dưỡng định kỳ cho xe máy & xe điện chính hãng."}},
+    {"@type": "Question","name": "Làm sao để chọn mẫu xe điện phù hợp?","acceptedAnswer": {"@type": "Answer","text": "Hãy xác định quãng đường di chuyển trung bình mỗi ngày, tốc độ mong muốn và ngân sách. Nhân viên tư vấn sẽ giúp bạn so sánh các mẫu cụ thể."}}
+  ]}
     ]
   }
   </script>

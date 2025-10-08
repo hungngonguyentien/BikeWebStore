@@ -23,6 +23,7 @@ const NavBar = () => {
             <Link to="/" className="nav__link">Trang Chủ</Link>
             <Link to="/products" className="nav__link">Sản Phẩm</Link>
             <Link to="/lienlac" className="nav__link">Địa chỉ và liên hệ</Link>
+            <Link to="/faq" className="nav__link">Câu Hỏi Thường Gặp</Link>
         </div>
         <div className="nav__right"><span className="nav__phone">0903 503 600</span></div>
 
@@ -41,6 +42,7 @@ const NavBar = () => {
             <Link to="/" className="nav__link" onClick={() => setOpen(false)}>Trang Chủ</Link>
             <Link to="/products" className="nav__link" onClick={() => setOpen(false)}>Sản Phẩm</Link>
             <Link to="/lienlac" className="nav__link" onClick={() => setOpen(false)}>Địa chỉ và liên hệ</Link>
+            <Link to="/faq" className="nav__link" onClick={() => setOpen(false)}>Câu Hỏi Thường Gặp</Link>
             <div className="nav__mobilePhone"><span className="nav__phone">0903 503 600</span></div>
         </div>
     </nav>
