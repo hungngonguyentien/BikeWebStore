@@ -2,33 +2,9 @@ import React, { useState, useEffect } from 'react'
 import ProductMenu from '../components/ProductMenu'
 import ProductCard from '../components/ProductCard'
 import { fetchBikesFromSheets } from '../utils/googleSheets'
+import { GOOGLE_SHEETS_URL, SAMPLE_BIKES } from '../config/constants'
 import { Helmet } from 'react-helmet-async'
 import './Products.css'
-
-// Fallback sample bikes (copied from Home.jsx) used if Google Sheets fetch fails
-const sampleBikes = [
-    {
-      id: 1,
-      name: 'Honda Winner X',
-      price: '45,990,000 VND',
-      imageURL: 'https://via.placeholder.com/300x200/264653/E0FBFC?text=Honda+Winner+X',
-      manufacturer: 'Honda'
-    },
-    {
-      id: 2,
-      name: 'Yamaha Exciter 155',
-      price: '47,390,000 VND',
-      imageURL: 'https://via.placeholder.com/300x200/E76F51/E0FBFC?text=Yamaha+Exciter',
-      manufacturer: 'Yamaha'
-    },
-    {
-      id: 3,
-      name: 'Suzuki Raider R150',
-      price: '52,900,000 VND',
-      imageURL: 'https://via.placeholder.com/300x200/2A9D8F/E0FBFC?text=Suzuki+Raider',
-      manufacturer: 'Suzuki'
-    }
-]
 
 const Products = () => {
   const [bikes, setBikes] = useState([])
@@ -40,9 +16,7 @@ const Products = () => {
     const loadBikes = async () => {
       try {
         setLoading(true)
-        // Your Google Sheets URL
-        const sheetsUrl = 'https://docs.google.com/spreadsheets/d/1r7Q_Iqo6ScvriOsyAUNOYo_6m3HAHTstUkE-4EX4m44/edit?usp=sharing'
-        const bikesData = await fetchBikesFromSheets(sheetsUrl)
+        const bikesData = await fetchBikesFromSheets(GOOGLE_SHEETS_URL)
         setBikes(bikesData)
         
         // Extract unique manufacturers
@@ -51,8 +25,8 @@ const Products = () => {
       } catch (error) {
         console.error('Error loading bikes from Google Sheets:', error)
         // Fallback to sample data
-        setBikes(sampleBikes)
-        const uniqueManufacturers = ['Tất cả', ...new Set(sampleBikes.map(bike => bike.manufacturer))]
+        setBikes(SAMPLE_BIKES)
+        const uniqueManufacturers = ['Tất cả', ...new Set(SAMPLE_BIKES.map(bike => bike.manufacturer))]
         setManufacturers(uniqueManufacturers)
       } finally {
         setLoading(false)
@@ -78,9 +52,9 @@ const Products = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://vinfastphudung.vn/products" />
         <meta property="og:site_name" content="PHÚ DŨNG Xe Máy" />
-  <meta property="og:image" content="https://vinfastphudung.vn/og-image.png" />
-  <meta property="og:image:alt" content="PHÚ DŨNG - Cửa Hàng Xe Máy & Xe Điện" />
-  <meta name="twitter:image" content="https://vinfastphudung.vn/og-image.png" />
+        <meta property="og:image" content="https://vinfastphudung.vn/og-image.png" />
+        <meta property="og:image:alt" content="PHÚ DŨNG - Cửa Hàng Xe Máy & Xe Điện" />
+        <meta name="twitter:image" content="https://vinfastphudung.vn/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Sản Phẩm Xe Máy - PHÚ DŨNG" />
         <meta name="twitter:description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu" />

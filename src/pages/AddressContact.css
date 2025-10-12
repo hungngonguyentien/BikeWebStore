@@ -1,0 +1,154 @@
+/* AddressContact.css */
+
+.address-contact-page {
+  min-height: 80vh;
+}
+
+.address-contact-header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  width: 100%;
+}
+
+.address-contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.contact-card {
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(38, 70, 83, 0.1);
+  border: 3px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(38, 70, 83, 0.15);
+}
+
+.address-card {
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(135deg, #2A9D8F, #E9C46A) border-box;
+}
+
+.contact-info-card {
+  background: linear-gradient(white, white) padding-box, 
+              linear-gradient(135deg, #E9C46A, #F4A261) border-box;
+}
+
+.contact-card-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.address-title {
+  color: #2A9D8F;
+}
+
+.contact-title {
+  color: #E76F51;
+}
+
+.contact-address {
+  font-style: normal;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #264653;
+  margin: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-phone {
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.contact-description {
+  color: #264653;
+  margin: 0;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.address-contact-footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #E0FBFC, white);
+  width: 100%;
+}
+
+.footer-subtitle {
+  font-size: 18px;
+  color: #2A9D8F;
+  margin: 16px 0 0;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .address-contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  .address-contact-header {
+    padding: 40px 15px 30px;
+  }
+  
+  .contact-card {
+    padding: 25px;
+  }
+  
+  .contact-card-title {
+    font-size: 24px;
+  }
+  
+  .contact-address {
+    font-size: 15px;
+  }
+  
+  .address-contact-footer {
+    padding: 30px 15px;
+  }
+  
+  .footer-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .address-contact-header {
+    padding: 30px 10px 20px;
+  }
+  
+  .contact-card {
+    padding: 20px;
+  }
+  
+  .contact-card-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-address {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .address-contact-footer {
+    padding: 25px 10px;
+  }
+}

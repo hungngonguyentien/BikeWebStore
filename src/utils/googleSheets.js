@@ -25,6 +25,7 @@ const csvToArray = (text, delimiter = ',') => {
   let inQuotes = false
 
   for (let i = 0; i < text.length; i++) {
+    // ch = current character
     const ch = text[i]
 
     // Quote handling (supports escaped quotes by doubling "")
@@ -62,6 +63,7 @@ const csvToArray = (text, delimiter = ',') => {
 
   // push last field/row (if any)
   // if file ends with newline, last row will be an empty array; handle that.
+  console.log(field);
   if (field !== '' || row.length > 0) {
     row.push(field)
     rows.push(row)
@@ -79,48 +81,90 @@ export const parseCSVToBikes = (csvText) => {
   if (!csvText || !csvText.trim()) return []
 
   // detect delimiter by counting in header line
-  const firstLine = csvText.split(/\r?\n/)[0] || ''
-  const commaCount = (firstLine.match(/,/g) || []).length
+  const firstLine = csvText.split(/\r?\n/)[0] || '' //Get first line safely
+  const commaCount = (firstLine.match(/,/g) || []).length 
   const tabCount = (firstLine.match(/\t/g) || []).length
-  const delimiter = tabCount > commaCount ? '\t' : ','
+  const delimiter = tabCount > commaCount ? '\t' : ',' // Detect delimiter
 
-  const rows = csvToArray(csvText, delimiter).filter(r => r.length > 0 && r.some(cell => cell !== ''))
+  const rows = csvToArray(csvText, delimiter).filter(r => r.length > 0 && r.some(cell => cell !== '')) // Break into rows, remove empty rows
+  
   if (rows.length === 0) return []
 
-  const rawHeaders = rows[0].map(h => (h || '').toLowerCase().trim())
+  const rawHeaders = rows[0].map(h => (h || '').toLowerCase().trim()) // header row, make it lowercase for matching. Eg: "Model" -> "model"
 
   const normalize = s => (s || '').toLowerCase().replace(/[\s_.]/g, '')
 
+  //Find index function for multiple possible header names
   const findIndex = (candidates) => {
     for (const cand of candidates) {
       const idx = rawHeaders.findIndex(h => normalize(h) === normalize(cand))
       if (idx !== -1) return idx
     }
     return -1
-  }
+  } 
 
+  // Find relevant columns 
   const nameIdx = findIndex(['name', 'model'])
   const priceIdx = findIndex(['price', 'cost'])
-  const imageIdx = findIndex(['imageurl', 'image url', 'image', 'image_url', 'imageurl'])
+  const imageIdx = findIndex(['imageurl', 'image url', 'image', 'image_url'])
   const manuIdx = findIndex(['manufacturer', 'maker', 'brand'])
+  const versionIdx = findIndex(['version or years', 'version', 'years', 'year'])
+  const descIdx = findIndex(['short description', 'description', 'desc'])
+  const colorsIdx = findIndex(['colors', 'color'])
+  const moreImg1Idx = findIndex(['more image 1', 'moreimage1', 'image1'])
+  const moreImg2Idx = findIndex(['more image 2', 'moreimage2', 'image2'])
+  const moreImg3Idx = findIndex(['more image 3', 'moreimage3', 'image3'])
+  const moreImg4Idx = findIndex(['more image 4', 'moreimage4', 'image4'])
+  const moreImg5Idx = findIndex(['more image 5', 'moreimage5', 'image5'])
+  const rangeIdx = findIndex(['range', 'distance'])
+  const chargeTimeIdx = findIndex(['charge time', 'chargetime', 'charging time'])
+  const maxSpeedIdx = findIndex(['max speed', 'maxspeed', 'top speed'])
+  const trunkWidthIdx = findIndex(['trunk width', 'trunkwidth', 'storage'])
+  const warrantyIdx = findIndex(['warranty', 'bao hanh'])
+  const engineIdx = findIndex(['engine', 'motor', 'dong co'])
+  const batteryIdx = findIndex(['battery', 'pin', 'acquy'])
+  const brakeIdx = findIndex(['brake', 'phanh'])
+  const frameIdx = findIndex(['frame and fork', 'frame', 'khung xe'])
+  const sizeIdx = findIndex(['size', 'dimensions', 'kich thuoc'])
+  const weightIdx = findIndex(['weight', 'trong luong', 'kg'])
 
-  const bikes = rows.slice(1).map((cells, i) => {
-    const name = (nameIdx !== -1 ? cells[nameIdx] : cells[0]) || ''
-    if (!name || name.trim().length === 0) return null
-
-    const price = (priceIdx !== -1 ? cells[priceIdx] : '') || ''
-    const imageURL = (imageIdx !== -1 ? cells[imageIdx] : '') || 'https://via.placeholder.com/300x200?text=No+Image'
-    const manufacturer = (manuIdx !== -1 ? cells[manuIdx] : (cells[3] || '')) || ''
+  // Map rows to bike objects
+  const bikes = rows.slice(1).map((cells, i) => { // slice(1) to skip header row
+    const name = (nameIdx !== -1 ? cells[nameIdx] : cells[0]) || '' // name = first column if no header found
+    if (!name || name.trim().length === 0) return null // skip rows without a name/model
 
     return {
       id: i + 1,
       name: name.trim(),
-      price: price.trim(),
-      imageURL: imageURL.trim(),
-      manufacturer: manufacturer.trim()
+      price: (priceIdx !== -1 ? cells[priceIdx] : '').trim(),
+      imageURL: (imageIdx !== -1 ? cells[imageIdx] : '').trim(),
+      manufacturer: (manuIdx !== -1 ? cells[manuIdx] : (cells[3] || '')).trim(),
+      version: (versionIdx !== -1 ? cells[versionIdx] : '').trim(),
+      shortDescription: (descIdx !== -1 ? cells[descIdx] : '').trim(),
+      colors: (colorsIdx !== -1 ? cells[colorsIdx] : '').trim(),
+      moreImages: [
+        (moreImg1Idx !== -1 ? cells[moreImg1Idx] : '').trim(),
+        (moreImg2Idx !== -1 ? cells[moreImg2Idx] : '').trim(),
+        (moreImg3Idx !== -1 ? cells[moreImg3Idx] : '').trim(),
+        (moreImg4Idx !== -1 ? cells[moreImg4Idx] : '').trim(),
+        (moreImg5Idx !== -1 ? cells[moreImg5Idx] : '').trim()
+      ].filter(img => img !== ''),
+      specifications: {
+        range: (rangeIdx !== -1 ? cells[rangeIdx] : '').trim(),
+        chargeTime: (chargeTimeIdx !== -1 ? cells[chargeTimeIdx] : '').trim(),
+        maxSpeed: (maxSpeedIdx !== -1 ? cells[maxSpeedIdx] : '').trim(),
+        trunkWidth: (trunkWidthIdx !== -1 ? cells[trunkWidthIdx] : '').trim(),
+        warranty: (warrantyIdx !== -1 ? cells[warrantyIdx] : '').trim(),
+        engine: (engineIdx !== -1 ? cells[engineIdx] : '').trim(),
+        battery: (batteryIdx !== -1 ? cells[batteryIdx] : '').trim(),
+        brake: (brakeIdx !== -1 ? cells[brakeIdx] : '').trim(),
+        frame: (frameIdx !== -1 ? cells[frameIdx] : '').trim(),
+        size: (sizeIdx !== -1 ? cells[sizeIdx] : '').trim(),
+        weight: (weightIdx !== -1 ? cells[weightIdx] : '').trim()
+      }
     }
   }).filter(Boolean)
-
+  console.log(bikes)
   return bikes
 }
 
@@ -129,11 +173,13 @@ export const parseCSVToBikes = (csvText) => {
  */
 export const fetchBikesFromSheets = async (shareUrl) => {
   try {
+    // convert share URL to CSV export URL, then fetch to get CSV text
     const csvUrl = getCSVUrl(shareUrl)
     const res = await fetch(csvUrl, { mode: 'cors', headers: { 'Accept': 'text/csv' } })
+    const text = await res.text()
+
 
     // debug: if you get HTML back (login page), you'll see "<!DOCTYPE html>"
-    const text = await res.text()
     if (!res.ok) {
       console.error('Fetch failed, response not OK:', res.status, text.slice(0, 300))
       throw new Error(`HTTP ${res.status}`)
@@ -144,7 +190,6 @@ export const fetchBikesFromSheets = async (shareUrl) => {
       console.error('Google returned HTML instead of CSV — sheet might not be public or endpoint blocked. First 300 chars:', text.slice(0, 300))
       throw new Error('Unexpected HTML response (check share settings / CORS)')
     }
-
     return parseCSVToBikes(text)
   } catch (err) {
     console.error('Error fetching/parsing sheet:', err)

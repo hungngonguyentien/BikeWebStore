@@ -22,6 +22,10 @@ const Footer = () => {
                 <span className="footer__phone-icon">📞</span>
                 090.350.3600
               </a>
+              <a href="tel:0984763222" className="footer__phone">
+                <span className="footer__phone-icon">📞</span>
+                098.476.3222
+              </a>
               <a 
                 href="https://www.facebook.com/people/VinFast-PHÚ-DŨNG/100057568774434/" 
                 target="_blank" 
