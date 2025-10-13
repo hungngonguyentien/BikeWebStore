@@ -127,6 +127,28 @@ export const parseCSVToBikes = (csvText) => {
   const frameIdx = findIndex(['frame and fork', 'frame', 'khung xe'])
   const sizeIdx = findIndex(['size', 'dimensions', 'kich thuoc'])
   const weightIdx = findIndex(['weight', 'trong luong', 'kg'])
+  const discountIdx = findIndex(['discount', 'discount%', 'discountpercent', 'sale', 'giamgia', 'giảm giá'])
+
+  // helper to parse discount formats like: "10", "10%", "0.1", "0,1"
+  const parseDiscount = (val) => {
+    if (!val) return 0
+    let s = String(val).trim().toLowerCase()
+    if (!s) return 0
+    s = s.replace(/\s+/g, '')
+    // replace comma decimal to dot
+    s = s.replace(',', '.')
+    // handle percentage
+    if (s.endsWith('%')) {
+      const num = parseFloat(s.slice(0, -1))
+      if (isNaN(num)) return 0
+      return Math.max(0, Math.min(1, num / 100))
+    }
+    const num = parseFloat(s)
+    if (isNaN(num)) return 0
+    // if between 0 and 1 assume already fraction; otherwise treat as percent
+    const fraction = num <= 1 ? num : num / 100
+    return Math.max(0, Math.min(1, fraction))
+  }
 
   // Map rows to bike objects
   const bikes = rows.slice(1).map((cells, i) => { // slice(1) to skip header row
@@ -137,6 +159,7 @@ export const parseCSVToBikes = (csvText) => {
       id: i + 1,
       name: name.trim(),
       price: (priceIdx !== -1 ? cells[priceIdx] : '').trim(),
+      discount: parseDiscount(discountIdx !== -1 ? cells[discountIdx] : ''),
       imageURL: (imageIdx !== -1 ? cells[imageIdx] : '').trim(),
       manufacturer: (manuIdx !== -1 ? cells[manuIdx] : (cells[3] || '')).trim(),
       version: (versionIdx !== -1 ? cells[versionIdx] : '').trim(),

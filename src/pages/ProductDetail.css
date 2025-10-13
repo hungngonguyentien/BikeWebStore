@@ -83,6 +83,20 @@
   font-weight: 500;
 }
 
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #dc3545;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
 .image-thumbnails {
   display: flex;
   gap: 10px;
@@ -139,12 +153,22 @@
 
 .price {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .current-price {
   font-size: 32px;
   font-weight: 700;
   color: #dc3545;
+}
+
+.original-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6c757d;
+  text-decoration: line-through;
+  margin-bottom: 4px;
 }
 
 .short-description {
@@ -371,6 +395,10 @@
   
   .current-price {
     font-size: 28px;
+  }
+
+  .original-price {
+    font-size: 16px;
   }
   
   .specs-grid {

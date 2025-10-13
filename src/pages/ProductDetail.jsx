@@ -74,6 +74,19 @@ const ProductDetail = () => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' VNĐ'
   }
 
+  const parsePriceToNumber = (val) => {
+    if (val == null) return null
+    const digits = String(val).replace(/[^0-9]/g, '')
+    if (!digits) return null
+    const num = parseInt(digits, 10)
+    return Number.isNaN(num) ? null : num
+  }
+
+  const formatPriceNumber = (num) => {
+    if (num == null) return 'Liên hệ để biết giá'
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' VNĐ'
+  }
+
   const getAvailableImages = () => {
     if (!bike) return []
     const images = [bike.imageURL, ...bike.moreImages].filter(img => img && img.trim() !== '')
@@ -116,6 +129,9 @@ const ProductDetail = () => {
             {/* Image Gallery */}
             <div className="product-images">
               <div className="main-image">
+                {bike.discount && bike.discount > 0 && bike.discount < 1 && (
+                  <div className="discount-badge">-{Math.round(bike.discount * 100)}%</div>
+                )}
                 <img 
                   src={selectedImage} 
                   alt={bike.name}
@@ -158,7 +174,14 @@ const ProductDetail = () => {
               </div>
 
               <div className="price">
-                <span className="current-price">{formatPrice(bike.price)}</span>
+                {bike.discount && bike.discount > 0 && bike.discount < 1 && parsePriceToNumber(bike.price) != null ? (
+                  <>
+                    <span className="original-price">{formatPriceNumber(parsePriceToNumber(bike.price))}</span>
+                    <span className="current-price">{formatPriceNumber(Math.round(parsePriceToNumber(bike.price) * (1 - bike.discount)))}</span>
+                  </>
+                ) : (
+                  <span className="current-price">{formatPrice(parsePriceToNumber(bike.price) ?? bike.price)}</span>
+                )}
               </div>
 
               {bike.shortDescription && (

@@ -36,6 +36,7 @@
   margin-bottom: 12px;
   margin-top: 6px;
   background: linear-gradient(135deg, #E0FBFC, #F4F4F4);
+  position: relative;
 }
 
 .bike-display__image {
@@ -70,6 +71,27 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.bike-display__price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.bike-display__price--original {
+  text-decoration: line-through;
+  color: #8f9aa3;
+  background: none;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  font-weight: 600;
+}
+
+.bike-display__price--discounted {
+  font-size: 16px;
+  color: #E76F51;
 }
 
 .bike-display__manufacturer {
@@ -119,6 +141,19 @@
   color: white;
 }
 
+.discount-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #dc3545;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .bike-display {
@@ -137,6 +172,10 @@
   
   .bike-display__price {
     font-size: 13px;
+  }
+
+  .bike-display__price--discounted {
+    font-size: 14px;
   }
   
   .bike-display__manufacturer {
