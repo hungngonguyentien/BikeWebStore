@@ -12,6 +12,22 @@ const Products = () => {
   const [manufacturers, setManufacturers] = useState([])
   const [loading, setLoading] = useState(true)
 
+  // Build ItemList JSON-LD from the loaded bikes
+  const buildItemListJsonLd = (items) => {
+    if (!items || items.length === 0) return null
+    const origin = 'https://vinfastphudung.vn'
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      'itemListElement': items.map((bike, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${origin}/product/${bike.id}`,
+        name: bike.name
+      }))
+    }
+  }
+
   useEffect(() => {
     const loadBikes = async () => {
       try {
@@ -60,6 +76,11 @@ const Products = () => {
         <meta name="twitter:description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu" />
         <meta name="twitter:url" content="https://vinfastphudung.vn/products" />
         <link rel="canonical" href="https://vinfastphudung.vn/products" />
+        {bikes.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify(buildItemListJsonLd(bikes))}
+          </script>
+        )}
       </Helmet>
       <div className="products-page">
         <div className="products-header-section">

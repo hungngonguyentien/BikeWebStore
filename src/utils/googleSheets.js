@@ -63,7 +63,6 @@ const csvToArray = (text, delimiter = ',') => {
 
   // push last field/row (if any)
   // if file ends with newline, last row will be an empty array; handle that.
-  console.log(field);
   if (field !== '' || row.length > 0) {
     row.push(field)
     rows.push(row)
@@ -187,7 +186,6 @@ export const parseCSVToBikes = (csvText) => {
       }
     }
   }).filter(Boolean)
-  console.log(bikes)
   return bikes
 }
 

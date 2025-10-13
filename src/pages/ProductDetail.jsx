@@ -98,6 +98,67 @@ const ProductDetail = () => {
     return bike.colors.split(',').map(c => c.trim()).filter(c => c !== '')
   }
 
+  // Build Product JSON-LD using live data (price + discount)
+  const buildProductJsonLd = (b) => {
+    if (!b) return null
+    const origin = 'https://vinfastphudung.vn'
+    const basePrice = parsePriceToNumber(b.price)
+    const hasDiscount = typeof b.discount === 'number' && b.discount > 0 && b.discount < 1 && basePrice != null
+    const finalPrice = hasDiscount ? Math.round(basePrice * (1 - b.discount)) : basePrice
+    const images = [b.imageURL, ...(b.moreImages || [])].filter(Boolean)
+
+    const product = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      '@id': `${origin}/#product-${(b.name || 'item').toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+      name: b.name,
+      image: images,
+      description: b.shortDescription || `${b.name} - ${b.manufacturer || ''}`.trim(),
+      brand: b.manufacturer ? { '@type': 'Brand', name: b.manufacturer } : undefined,
+      url: `${origin}/product/${b.id}`,
+    }
+
+    // Offers with discounted price if available
+    if (finalPrice != null) {
+      product.offers = {
+        '@type': 'Offer',
+        priceCurrency: 'VND',
+        price: String(finalPrice),
+        availability: 'https://schema.org/InStock',
+        url: `${origin}/product/${b.id}`
+      }
+    }
+
+    // Add structured specs and discount as additionalProperty
+    const props = []
+    const s = b.specifications || {}
+    const addProp = (name, value) => {
+      if (value && String(value).trim() !== '') {
+        props.push({ '@type': 'PropertyValue', name, value })
+      }
+    }
+    addProp('range', s.range)
+    addProp('maxSpeed', s.maxSpeed)
+    addProp('chargeTime', s.chargeTime)
+    addProp('trunkWidth', s.trunkWidth)
+    addProp('warranty', s.warranty)
+    addProp('engine', s.engine)
+    addProp('battery', s.battery)
+    addProp('brake', s.brake)
+    addProp('frame', s.frame)
+    addProp('size', s.size)
+    addProp('weight', s.weight)
+    if (hasDiscount) {
+      addProp('originalPrice', basePrice != null ? String(basePrice) : undefined)
+      addProp('discountPercent', `${Math.round(b.discount * 100)}%`)
+    }
+    if (props.length) {
+      product.additionalProperty = props
+    }
+
+    return product
+  }
+
   if (loading) return <div className="loading">Đang tải...</div>
   if (!bike) return <div className="error">Không tìm thấy sản phẩm</div>
 
@@ -112,6 +173,11 @@ const ProductDetail = () => {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={`https://vinfastphudung.vn/product/${bike.id}`} />
         <link rel="canonical" href={`https://vinfastphudung.vn/product/${bike.id}`} />
+        {bike && (
+          <script type="application/ld+json">
+            {JSON.stringify(buildProductJsonLd(bike))}
+          </script>
+        )}
       </Helmet>
 
       <div className="product-detail">
