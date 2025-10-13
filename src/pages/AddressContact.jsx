@@ -7,7 +7,7 @@ const AddressContact = () => {
     <>
       <Helmet>
         <title>Địa Chỉ & Liên Hệ - PHÚ DŨNG | Cửa Hàng Xe Máy Đắk Lắk</title>
-        <meta name="description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk. Địa chỉ: Số 32 - Cách Mạng Tháng 8, Thị trấn Quảng Phú, Huyện Cư M'gar, Đắk Lắk. Hotline: 090.350.3600 | 098.476.3222" />
+  <meta name="description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk. Địa chỉ: Số 32-34 - Cách Mạng Tháng 8, Thị trấn Quảng Phú, Huyện Cư M'gar, Đắk Lắk. Hotline: 090.350.3600 | 098.476.3222" />
         <meta name="keywords" content="liên hệ PHÚ DŨNG, địa chỉ cửa hàng xe máy, Đắk Lắk, Cư M'gar, Quảng Phú, 090.350.3600, 098.476.3222, xe máy Đắk Lắk" />
         <meta property="og:title" content="Địa Chỉ & Liên Hệ - PHÚ DŨNG" />
         <meta property="og:description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk" />
@@ -37,7 +37,7 @@ const AddressContact = () => {
             <div className="contact-card address-card">
               <h2 className="contact-card-title address-title">📍 Địa Chỉ Cửa Hàng</h2>
               <address className="contact-address">
-                Số 32 - Cách Mạng Tháng 8<br />
+                Số 32-34 - Cách Mạng Tháng 8<br />
                 Thị trấn Quảng Phú - Huyện Cư M'gar<br />
                 Đắk Lắk
               </address>

@@ -8,7 +8,7 @@ export const CONTACT_INFO = {
   phone: '090.350.3600',
   phoneHref: 'tel:0903503600',
   email: 'hanh3503600@gmail.com',
-  address: 'Số 32 - Cách Mạng Tháng 8, Thị trấn Quảng Phú, Huyện Cư M\'gar, Đắk Lắk',
+  address: 'Số 32-34 - Cách Mạng Tháng 8, Thị trấn Quảng Phú, Huyện Cư M\'gar, Đắk Lắk',
   shortAddress: 'Quảng Phú, Cư M\'gar, Đắk Lắk'
 }
 

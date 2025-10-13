@@ -77,7 +77,7 @@ function Home(){
         <>
             <Helmet>
                 <title>PHÚ DŨNG - Xe Máy Chất Lượng | Cửa Hàng Xe Máy Đắk Lắk</title>
-                <meta name="description" content="PHÚ DŨNG chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu như Honda, Yamaha, Suzuki. Địa chỉ: Số 32 - Cách Mạng Tháng 8, Quảng Phú, Cư M'gar, Đắk Lắk. Liên hệ: 090.350.3600" />
+                <meta name="description" content="PHÚ DŨNG chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu như Honda, Yamaha, Suzuki. Địa chỉ: Số 32-34 - Cách Mạng Tháng 8, Quảng Phú, Cư M'gar, Đắk Lắk. Liên hệ: 090.350.3600" />
                 <meta name="keywords" content="xe máy, Honda, Yamaha, Suzuki, VinFast, Đắk Lắk, Cư M'gar, Quảng Phú, PHÚ DŨNG, xe máy chất lượng" />
                 <meta name="author" content="PHÚ DŨNG" />
                 <meta property="og:title" content="PHÚ DŨNG - Xe Máy Chất Lượng" />

@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="footer__section">
             <h3 className="footer__title">Địa chỉ cửa hàng</h3>
             <div className="footer__address">
-              <p className="footer__address-line">Số 32 - Cách Mạng Tháng 8</p>
+              <p className="footer__address-line">Số 32-34 - Cách Mạng Tháng 8</p>
               <p className="footer__address-line">Thị trấn Quảng Phú - Huyện Cư M'gar</p>
               <p className="footer__address-line">Đắk Lắk</p>
             </div>

@@ -1,10 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './ImageSlider.css'
 import imgA from '../assets/event0.jpg'
-import imgB from '../assets/event1.png'
-import imgC from '../assets/event2.png'
+import imgB from '../assets/event1.jpg'
+import imgC from '../assets/event2.jpg'
 
-const images = [imgA, imgB, imgC]
+const slides = [
+  {
+    src: imgA,
+    alt: "Hành trình 1 chiếc xe tới gặp bạn tại Vinfast Phú Dũng"
+  },
+  {
+    src: imgB,
+    alt: "Ra mắt Feliz phiên bản 02 pin, quãng đường lên đến 262km/lần sạc, chỉ từ 25.900.000 VNĐ"
+  },
+  {
+    src: imgC,
+    alt: "Mở bán Vero X, xe máy điện 2 pin với công nghệ thông minh, chỉ từ 34.900.000 VNĐ"
+  }
+]
 
 const ImageSlider = ({ interval = 3000 }) => {
   const [index, setIndex] = useState(0)
@@ -12,28 +25,22 @@ const ImageSlider = ({ interval = 3000 }) => {
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
-      setIndex(prev => (prev + 1) % images.length)
+      setIndex(prev => (prev + 1) % slides.length)
     }, interval)
     return () => clearTimeout(timeoutRef.current)
   }, [index, interval])
 
-  const prev = () => setIndex(i => (i - 1 + images.length) % images.length)
-  const next = () => setIndex(i => (i + 1) % images.length)
+  const prev = () => setIndex(i => (i - 1 + slides.length) % slides.length)
+  const next = () => setIndex(i => (i + 1) % slides.length)
 
   return (
     <div className="slider">
       <div className="slider__viewport">
-        {images.map((src, i) => (
+        {slides.map((item, i) => (
           <img
             key={i}
-            src={src}
-            alt={
-              i === 0
-                ? 'Sự kiện cửa hàng xe máy & xe điện Phú Dũng – dịch vụ và ưu đãi'
-                : i === 1
-                ? 'Khách hàng tại Phú Dũng lựa chọn xe phù hợp nhu cầu'
-                : 'Mẫu xe nổi bật trưng bày tại Phú Dũng'
-            }
+            src={item.src}
+            alt={item.alt}
             className={`slider__img ${i === index ? 'is-active' : ''}`}
             style={{ transform: `translateX(${(i - index) * 100}%)` }}
             loading={i === 0 ? 'eager' : 'lazy'}
@@ -46,7 +53,7 @@ const ImageSlider = ({ interval = 3000 }) => {
       <button className="slider__btn slider__btn--next" onClick={next} aria-label="Next">›</button>
 
       <div className="slider__dots">
-        {images.map((_, i) => (
+        {slides.map((_, i) => (
           <button
             key={i}
             className={`slider__dot ${i === index ? 'is-active' : ''}`}
