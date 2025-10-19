@@ -1,0 +1,5 @@
+# Ensure HTML files are served with correct content-type
+/*.html
+  Content-Type: text/html; charset=utf-8
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
