@@ -1,5 +1,18 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
+
+# Priority pages for crawling
+Allow: /products
+Allow: /product/
+Allow: /faq
+Allow: /lienlac
+
+# Disallow build artifacts
+Disallow: /assets/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /static/
 
 # Disallow specific AI/data-scraper bots
 User-agent: Amazonbot
@@ -26,9 +39,9 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
-# Block build artifacts or sensitive paths (uncomment if added later)
-# User-agent: *
-# Disallow: /admin/
-# Disallow: /api/
+# Allow Googlebot specifically for better indexing
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
 
 Sitemap: https://vinfastphudung.vn/sitemap.xml
