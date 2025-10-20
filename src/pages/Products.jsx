@@ -23,7 +23,23 @@ const Products = () => {
         '@type': 'ListItem',
         position: index + 1,
         url: `${origin}/product/${bike.id}`,
-        name: bike.name
+        name: bike.name,
+        item: {
+          '@type': 'Product',
+          '@id': `${origin}/product/${bike.id}`,
+          name: bike.name,
+          brand: bike.manufacturer ? { '@type': 'Brand', name: bike.manufacturer } : undefined,
+          image: bike.imageURL,
+          description: bike.shortDescription || `${bike.name} - ${bike.manufacturer || ''}`.trim(),
+          url: `${origin}/product/${bike.id}`,
+          offers: bike.price ? {
+            '@type': 'Offer',
+            priceCurrency: 'VND',
+            price: bike.price.toString().replace(/[^\d]/g, ''),
+            availability: 'https://schema.org/InStock',
+            url: `${origin}/product/${bike.id}`
+          } : undefined
+        }
       }))
     }
   }

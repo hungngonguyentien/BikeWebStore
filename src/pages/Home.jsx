@@ -94,6 +94,39 @@ function Home(){
                 <meta name="twitter:description" content="Chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu" />
                 <meta name="twitter:url" content="https://vinfastphudung.vn/" />
                 <link rel="canonical" href="https://vinfastphudung.vn/" />
+                
+                {/* Product Catalog Schema - References products page without duplicating */}
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    "@id": "https://vinfastphudung.vn/#homepage",
+                    "name": "PHÚ DŨNG - Xe Máy Chất Lượng",
+                    "description": "Cửa hàng xe máy chất lượng cao tại Đắk Lắk",
+                    "url": "https://vinfastphudung.vn/",
+                    "mainEntity": {
+                      "@type": "ItemList",
+                      "name": "Danh sách sản phẩm xe máy",
+                      "description": "Bộ sưu tập xe máy từ các thương hiệu hàng đầu",
+                      "url": "https://vinfastphudung.vn/products",
+                      "numberOfItems": bikes.length,
+                      "itemListElement": bikes.slice(0, 8).map((bike, index) => ({
+                        "@type": "ListItem",
+                        "position": index + 1,
+                        "url": `https://vinfastphudung.vn/product/${bike.id}`,
+                        "name": bike.name
+                      }))
+                    },
+                    "hasPart": [
+                      {
+                        "@type": "WebPage",
+                        "name": "Sản Phẩm",
+                        "url": "https://vinfastphudung.vn/products",
+                        "description": "Xem tất cả sản phẩm xe máy"
+                      }
+                    ]
+                  })}
+                </script>
             </Helmet>
             <main style={{ padding: 0 }}>
                 <div style={{ padding: '0 20px' }}>
