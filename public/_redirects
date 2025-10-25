@@ -1,3 +1,6 @@
+# Force HTTPS redirect - ensure all HTTP requests redirect to HTTPS
+http://vinfastphudung.vn/* https://vinfastphudung.vn/:splat 301!
+
 # Cloudflare Pages will serve static files directly if they exist
 # This file only handles fallbacks for React routing
 /* /index.html 200
