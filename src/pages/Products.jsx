@@ -77,10 +77,10 @@ const Products = () => {
     <>
       <Helmet>
         <title>Sản Phẩm - PHÚ DŨNG | Xe Máy Honda, Yamaha, Suzuki, VinFast</title>
-        <meta name="description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu Honda, Yamaha, Suzuki, VinFast tại PHÚ DŨNG. Giá cả cạnh tranh, chất lượng đảm bảo." />
-        <meta name="keywords" content="sản phẩm xe máy, Honda Winner, Yamaha Exciter, Suzuki Raider, VinFast, xe máy mới, xe máy chính hãng, Đắk Lắk" />
-        <meta property="og:title" content="Sản Phẩm Xe Máy - PHÚ DŨNG" />
-        <meta property="og:description" content="Khám phá bộ sưu tập xe máy chất lượng cao từ các thương hiệu hàng đầu" />
+        <meta name="description" content="Xe máy Đắk Lắk - Bộ sưu tập xe máy & xe điện VinFast chính hãng tại PHÚ DŨNG. Honda Winner, Yamaha Exciter, VinFast Feliz Neo, Theon S. Đại lý uy tín #1 tại Đắk Lắk." />
+        <meta name="keywords" content="xe máy Đắk Lắk, VinFast Đắk Lắk, Honda Winner Đắk Lắk, Yamaha Exciter Đắk Lắk, xe điện VinFast, Feliz Neo, Theon S, đại lý VinFast Đắk Lắk" />
+        <meta property="og:title" content="Xe Máy Đắk Lắk - VinFast, Honda, Yamaha | PHÚ DŨNG" />
+        <meta property="og:description" content="Xe máy Đắk Lắk - Đại lý VinFast chính hãng. Honda Winner, Yamaha Exciter, VinFast Feliz Neo có sẵn tại PHÚ DŨNG Đắk Lắk." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://vinfastphudung.vn/products" />
         <meta property="og:site_name" content="PHÚ DŨNG Xe Máy" />

@@ -77,11 +77,11 @@ function Home(){
         <>
             <Helmet>
                 <title>PHÚ DŨNG - Xe Máy Chất Lượng | Cửa Hàng Xe Máy Đắk Lắk</title>
-                <meta name="description" content="PHÚ DŨNG chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu như Honda, Yamaha, Suzuki. Địa chỉ: Số 32-34 - Cách Mạng Tháng 8, Quảng Phú, Cư M'gar, Đắk Lắk. Liên hệ: 090.350.3600" />
-                <meta name="keywords" content="xe máy, Honda, Yamaha, Suzuki, VinFast, Đắk Lắk, Cư M'gar, Quảng Phú, PHÚ DŨNG, xe máy chất lượng" />
+                <meta name="description" content="PHÚ DŨNG - Cửa hàng xe máy & xe điện hàng đầu tại Đắk Lắk. Đại lý chính hãng VinFast, Honda, Yamaha, Suzuki tại Cư M'gar, Đắk Lắk. Bảo hành uy tín, giá tốt nhất. Hotline: 090.350.3600" />
+                <meta name="keywords" content="xe máy Đắk Lắk, VinFast Đắk Lắk, Honda Đắk Lắk, Yamaha Đắk Lắk, xe điện VinFast, Cư M'gar, Quảng Phú, PHÚ DŨNG, đại lý VinFast Đắk Lắk" />
                 <meta name="author" content="PHÚ DŨNG" />
-                <meta property="og:title" content="PHÚ DŨNG - Xe Máy Chất Lượng" />
-                <meta property="og:description" content="Chuyên cung cấp xe máy chất lượng cao từ các thương hiệu hàng đầu. Dịch vụ tận tâm - Giá cả hợp lý." />
+                <meta property="og:title" content="PHÚ DŨNG - Xe Máy & Xe Điện Đắk Lắk | Đại Lý VinFast" />
+                <meta property="og:description" content="Cửa hàng xe máy & xe điện uy tín #1 tại Đắk Lắk. Đại lý chính hãng VinFast, Honda, Yamaha. Phục vụ toàn tỉnh Đắk Lắk - Giá tốt - Bảo hành uy tín." />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="vi_VN" />
                 <meta property="og:url" content="https://vinfastphudung.vn/" />
