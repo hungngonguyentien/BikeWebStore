@@ -7,10 +7,10 @@ const AddressContact = () => {
     <>
       <Helmet>
         <title>Địa Chỉ & Liên Hệ - PHÚ DŨNG | Cửa Hàng Xe Máy Đắk Lắk</title>
-        <meta name="description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk. Địa chỉ: Số 32-34 - Cách Mạng Tháng 8, Thị trấn Quảng Phú, Huyện Cư M'gar, Đắk Lắk. Hotline: 090.350.3600 | 098.476.3222" />
-        <meta name="keywords" content="liên hệ PHÚ DŨNG, địa chỉ cửa hàng xe máy, Đắk Lắk, Cư M'gar, Quảng Phú, 090.350.3600, 098.476.3222, xe máy Đắk Lắk" />
+        <meta name="description" content="Liên hệ PHÚ DŨNG - Đại lý xe điện VinFast tại Đắk Lắk. Địa chỉ: Số 32-34 - Cách Mạng Tháng 8, Thị trấn Quảng Phú, Huyện Cư M'gar, Đắk Lắk. Phục vụ Ea Pôk, Cư Suê, Ea Súp. Hotline: 090.350.3600 | 098.476.3222" />
+        <meta name="keywords" content="liên hệ PHÚ DŨNG, địa chỉ đại lý VinFast, xe điện Đắk Lắk, Cư M'gar, Quảng Phú, Ea Pôk, Cư Suê, Ea Súp, 090.350.3600, 098.476.3222" />
         <meta property="og:title" content="Địa Chỉ & Liên Hệ - PHÚ DŨNG" />
-        <meta property="og:description" content="Liên hệ PHÚ DŨNG - Cửa hàng xe máy chất lượng tại Đắk Lắk" />
+        <meta property="og:description" content="Liên hệ PHÚ DŨNG - Đại lý xe điện VinFast chính hãng tại Quảng Phú, Đắk Lắk. Phục vụ Cư M'gar, Ea Pôk, Cư Suê và vùng lân cận." />
         <meta property="og:type" content="place" />
         <meta property="og:url" content="https://vinfastphudung.vn/lienlac" />
         <meta property="og:site_name" content="PHÚ DŨNG Xe Máy" />

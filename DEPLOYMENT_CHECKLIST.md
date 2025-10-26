@@ -30,7 +30,7 @@ Visit these URLs and check page source (Ctrl+U):
 - [ ] `https://vinfastphudung.vn/products` - Should show "Sản Phẩm - PHÚ DŨNG" in title
 - [ ] `https://vinfastphudung.vn/faq` - Should show "FAQ - Câu Hỏi Thường Gặp" in title
 - [ ] `https://vinfastphudung.vn/lienlac` - Should show contact page title
-- [ ] `https://vinfastphudung.vn/product/1` - Should show "Motio - Xe Điện Phú Đăng" in title
+- [ ] `https://vinfastphudung.vn/product/1` - Should show "Motio - Xe Điện Phú Dũng" in title
 
 ### 2. SEO Verification Tools
 - [ ] Google Rich Results Test: https://search.google.com/test/rich-results

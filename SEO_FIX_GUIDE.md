@@ -30,7 +30,7 @@ npm run start
 ✅ Server successfully serves prerendered content:
 - ✅ `/products` → Proper SEO title: "Sản Phẩm - PHÚ DŨNG | Xe Máy Honda, Yamaha, Suzuki, VinFast"
 - ✅ `/faq` → Proper SEO title: "FAQ - Câu Hỏi Thường Gặp | PHÚ DŨNG"  
-- ✅ `/product/1` → Proper SEO title: "Motio - Xe Điện Phú Đăng"
+- ✅ `/product/1` → Proper SEO title: "Motio - Xe Điện Phú Dũng"
 
 ### 4. ✅ COMPLETED - Verify Prerendered Files
 ✅ All files successfully created in your `dist` folder:

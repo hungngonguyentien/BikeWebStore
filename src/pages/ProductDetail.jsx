@@ -165,9 +165,9 @@ const ProductDetail = () => {
   return (
     <>
       <Helmet>
-        <title>{bike.name} - Xe Điện Phú Đăng</title>
-        <meta name="description" content={`${bike.name} ${bike.shortDescription} - ${bike.manufacturer}. Tầm hoạt động: ${bike.specifications.range}, Tốc độ tối đa: ${bike.specifications.maxSpeed}`} />
-        <meta property="og:title" content={`${bike.name} - Xe Điện Phú Đăng`} />
+        <title>{bike.name} VinFast Đắk Lắk - PHÚ DŨNG Quảng Phú</title>
+        <meta name="description" content={`${bike.name} VinFast tại Đắk Lắk - ${bike.shortDescription}. Tầm hoạt động: ${bike.specifications?.range || 'N/A'}, Tốc độ tối đa: ${bike.specifications?.maxSpeed || 'N/A'}. Đại lý chính hãng PHÚ DŨNG Quảng Phú, Cư M'gar.`} />
+        <meta property="og:title" content={`${bike.name} VinFast - Xe Điện Đắk Lắk | PHÚ DŨNG`} />
         <meta property="og:description" content={`${bike.shortDescription} - ${bike.manufacturer}`} />
         <meta property="og:image" content={bike.imageURL} />
         <meta property="og:type" content="product" />

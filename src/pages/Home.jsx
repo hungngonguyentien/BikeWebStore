@@ -77,11 +77,11 @@ function Home(){
         <>
             <Helmet>
                 <title>PHÚ DŨNG - Xe Máy Chất Lượng | Cửa Hàng Xe Máy Đắk Lắk</title>
-                <meta name="description" content="PHÚ DŨNG - Cửa hàng xe máy & xe điện hàng đầu tại Đắk Lắk. Đại lý chính hãng VinFast, Honda, Yamaha, Suzuki tại Cư M'gar, Đắk Lắk. Bảo hành uy tín, giá tốt nhất. Hotline: 090.350.3600" />
-                <meta name="keywords" content="xe máy Đắk Lắk, VinFast Đắk Lắk, Honda Đắk Lắk, Yamaha Đắk Lắk, xe điện VinFast, Cư M'gar, Quảng Phú, PHÚ DŨNG, đại lý VinFast Đắk Lắk" />
+                <meta name="description" content="PHÚ DŨNG - Đại lý xe điện VinFast #1 tại Đắk Lắk. Chuyên xe máy điện, xe đạp điện VinFast tại Quảng Phú, Cư M'gar. Feliz Neo, Theon S, Motio có sẵn. Phục vụ toàn Đắk Lắk. Hotline: 090.350.3600" />
+                <meta name="keywords" content="xe điện VinFast Đắk Lắk, xe máy điện VinFast, xe đạp điện VinFast, Feliz Neo Đắk Lắk, Theon S Đắk Lắk, Motio Đắk Lắk, đại lý VinFast Quảng Phú, xe điện Cư M'gar, PHÚ DŨNG" />
                 <meta name="author" content="PHÚ DŨNG" />
-                <meta property="og:title" content="PHÚ DŨNG - Xe Máy & Xe Điện Đắk Lắk | Đại Lý VinFast" />
-                <meta property="og:description" content="Cửa hàng xe máy & xe điện uy tín #1 tại Đắk Lắk. Đại lý chính hãng VinFast, Honda, Yamaha. Phục vụ toàn tỉnh Đắk Lắk - Giá tốt - Bảo hành uy tín." />
+                <meta property="og:title" content="PHÚ DŨNG - Xe Điện VinFast Đắk Lắk | Đại Lý Chính Hãng" />
+                <meta property="og:description" content="Đại lý xe điện VinFast chính hãng #1 tại Đắk Lắk. Chuyên xe máy điện, xe đạp điện VinFast tại Quảng Phú. Feliz Neo, Theon S, Motio - Giá tốt - Bảo hành chính hãng." />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="vi_VN" />
                 <meta property="og:url" content="https://vinfastphudung.vn/" />

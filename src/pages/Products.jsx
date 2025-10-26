@@ -76,11 +76,11 @@ const Products = () => {
   return (
     <>
       <Helmet>
-        <title>Sản Phẩm - PHÚ DŨNG | Xe Máy Honda, Yamaha, Suzuki, VinFast</title>
-        <meta name="description" content="Xe máy Đắk Lắk - Bộ sưu tập xe máy & xe điện VinFast chính hãng tại PHÚ DŨNG. Honda Winner, Yamaha Exciter, VinFast Feliz Neo, Theon S. Đại lý uy tín #1 tại Đắk Lắk." />
-        <meta name="keywords" content="xe máy Đắk Lắk, VinFast Đắk Lắk, Honda Winner Đắk Lắk, Yamaha Exciter Đắk Lắk, xe điện VinFast, Feliz Neo, Theon S, đại lý VinFast Đắk Lắk" />
-        <meta property="og:title" content="Xe Máy Đắk Lắk - VinFast, Honda, Yamaha | PHÚ DŨNG" />
-        <meta property="og:description" content="Xe máy Đắk Lắk - Đại lý VinFast chính hãng. Honda Winner, Yamaha Exciter, VinFast Feliz Neo có sẵn tại PHÚ DŨNG Đắk Lắk." />
+        <title>Xe Điện VinFast Đắk Lắk | PHÚ DŨNG - Feliz Neo, Theon S, Motio</title>
+        <meta name="description" content="Xe điện VinFast Đắk Lắk - Bộ sưu tập xe máy điện, xe đạp điện VinFast chính hãng tại PHÚ DŨNG Quảng Phú. Feliz Neo, Theon S, Motio, Evo200, Klara S có sẵn. Đại lý uy tín #1 Đắk Lắk." />
+        <meta name="keywords" content="xe điện VinFast Đắk Lắk, xe máy điện VinFast, xe đạp điện VinFast, Feliz Neo Đắk Lắk, Theon S Đắk Lắk, Motio Quảng Phú, Evo200 Cư M'gar, đại lý VinFast Đắk Lắk" />
+        <meta property="og:title" content="Xe Điện VinFast Đắk Lắk - Feliz Neo, Theon S | PHÚ DŨNG" />
+        <meta property="og:description" content="Xe điện VinFast Đắk Lắk - Đại lý chính hãng tại Quảng Phú. Feliz Neo, Theon S, Motio, xe đạp điện có sẵn tại PHÚ DŨNG. Phục vụ toàn Đắk Lắk." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://vinfastphudung.vn/products" />
         <meta property="og:site_name" content="PHÚ DŨNG Xe Máy" />
